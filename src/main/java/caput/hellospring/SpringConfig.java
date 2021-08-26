@@ -2,6 +2,7 @@ package caput.hellospring;
 
 
 import caput.hellospring.repository.JdbcMemberRepository;
+import caput.hellospring.repository.JdbcTemplateMemberRepository;
 import caput.hellospring.repository.MemberRepository;
 import caput.hellospring.repository.MemoryMemberRepository;
 import caput.hellospring.service.MemberService;
@@ -32,6 +33,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
 //      return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        //return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
